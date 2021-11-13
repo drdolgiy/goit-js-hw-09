@@ -53,23 +53,13 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function getTime(time) {
-  dataDays.textContent = time.days;
-  dataHours.textContent = time.hours;
-  dataMinutes.textContent = time.minutes;
-  dataSeconds.textContent = time.seconds;
-}
-
-
-function addLeadingZero() {
-  
-  if(dataDays.textContent.length < 2) {
-    return dataDays.textContent.padStart(2, 0)
-  }
-}
 // console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
 // console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 // console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+
+function addLeadingZero() {
+
+}
 
 dataStartButton.addEventListener('click', onClick);
 
@@ -83,11 +73,16 @@ function onClick() {
     // console.log(differenceInTime);
     const time = convertMs(differenceInTime);
     // console.log(time);
-    getTime(time);
+    dataDays.textContent = time.days;
+    dataHours.textContent = time.hours;
+    dataMinutes.textContent = time.minutes;
+    dataSeconds.textContent = time.seconds;
     
     if (differenceInTime <= 1000) {
       clearInterval(timerId)
     };    
   };     
 };
+
+
 
