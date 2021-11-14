@@ -55,7 +55,7 @@ function convertMs(ms) {
 
 function addLeadingZero(time) {
   const timeToString = time.toString();
-  console.log(timeToString)
+  // console.log(timeToString)
   return timeToString.padStart(2, 0);
 }
 
