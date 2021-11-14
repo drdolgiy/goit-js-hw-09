@@ -53,8 +53,10 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function addLeadingZero() {
-
+function addLeadingZero(time) {
+  const timeToString = time.toString();
+  console.log(timeToString)
+  return timeToString.padStart(2, 0);
 }
 
 dataStartButton.addEventListener('click', onClick);
@@ -69,10 +71,10 @@ function onClick() {
     // console.log(differenceInTime);
     const time = convertMs(differenceInTime);
     // console.log(time);
-    dataDays.textContent = time.days;
-    dataHours.textContent = time.hours;
-    dataMinutes.textContent = time.minutes;
-    dataSeconds.textContent = time.seconds;
+    dataDays.textContent = addLeadingZero(time.days);
+    dataHours.textContent = addLeadingZero(time.hours);
+    dataMinutes.textContent = addLeadingZero(time.minutes);
+    dataSeconds.textContent = addLeadingZero(time.seconds);
     
     if (differenceInTime <= 1000) {
       clearInterval(timerId)
