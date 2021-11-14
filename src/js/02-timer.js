@@ -79,6 +79,10 @@ function onClick() {
     if (differenceInTime <= 1000) {
       clearInterval(timerId)
     };    
+
+    dataStartButton.setAttribute('disabled', '');
+    inputDatetime.setAttribute('disabled', '');
+
   };     
 };
 
