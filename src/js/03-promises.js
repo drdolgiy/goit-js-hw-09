@@ -1,21 +1,20 @@
 const form = document.querySelector('.form');
-console.log(form);
-// const delay = document.querySelector('input[name="delay"]');
-// console.log(delay);
-// const step = document.querySelector('input[name="step"]');
-// console.log(step);
-// const amount = document.querySelector('input[name="amount"]');
-// console.log(amount);
+// console.log(form);
+const inputDelay = document.querySelector('input[name="delay"]');
+// console.log(inputDelay);
+const inputStep = document.querySelector('input[name="step"]');
+// console.log(inputStep);
+const inputAmount = document.querySelector('input[name="amount"]');
+// console.log(inputAmount);
 
 form.addEventListener('submit', onSubmitClick);
 
 function onSubmitClick(evt) {
   evt.preventDefault();
+  const firstDelay = inputDelay.value;
 
-  const firstDelay = evt.target[0].value;
-
-  const step = evt.target[1].value;
-  const amount = evt.target[2].value;
+  const step = inputStep.value;
+  const amount = inputAmount.value;
   let delay = firstDelay;
 
   for ( let i = 0; i <= amount; i +=1) {
