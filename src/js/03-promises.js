@@ -23,7 +23,7 @@ function onSubmitClick(evt) {
   // console.log(delay);
   
   for ( let i = 1; i <= amount; i +=1) {
-    createPromise(i + 1, delay)
+    createPromise(i, delay)
       .then(({ position, delay }) => setTimeout(() => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
       }), delay)
