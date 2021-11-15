@@ -16,19 +16,22 @@ function onSubmitClick(evt) {
   const firstDelay = inputDelay.value;
 
   const step = inputStep.value;
+  // console.log(step);
   const amount = inputAmount.value;
+  // console.log(amount);
   let delay = firstDelay;
-
-  for ( let i = 0; i <= amount; i +=1) {
-    createPromise(i , delay)
+  // console.log(delay);
+  
+  for ( let i = 1; i <= amount; i +=1) {
+    createPromise(i + 1, delay)
       .then(({ position, delay }) => setTimeout(() => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
       }), delay)
       .catch(({ position, delay }) => setTimeout(() => {
         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       }), delay)
-      delay += step;
   }
+  delay += step;
 }
 
 function createPromise(position, delay) {
